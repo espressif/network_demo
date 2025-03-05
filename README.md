@@ -51,36 +51,25 @@ flowchart TB
     subgraph Network["Network (192.168.1.0/24)"]
         direction TB
         B[P4 Functional eval dev kit\n192.168.1.1]
-        S[Ethernet Switch]
-        N1[Node 1\n192.168.1.10]
-        N2[Node 2\n192.168.1.11]
         BR[C5 Bridge to 5G Wireless\n192.168.1.2]
 
-        B --- S
-        S --- N1
-        S --- N2
-        S --- BR
+        B --- BR
+        
     end
     
     subgraph Wireless["Wireless (192.168.1.0/24)"]
         direction TB
         W1[Node W1\n192.168.1.20]
-        W2[Node W2\n192.168.1.21]
         
         BR --- W1
-        BR --- W2
     end
     
     style Network fill:none,stroke:none
     style Wireless fill:none,stroke-dasharray: 5 5,stroke:#333
     style B fill:#FF7300,stroke:#333,stroke-width:2px
     style BR fill:#2F343F,stroke:#333,stroke-width:2px
-    style N1 fill:#0064A7,stroke:#333,stroke-width:2px
-    style N2 fill:#0064A7,stroke:#333,stroke-width:2px
-    style N3 fill:#0064A7,stroke:#333,stroke-width:2px
     style W1 fill:#00AED9,stroke:#333,stroke-width:2px
-    style W2 fill:#00AED9,stroke:#333,stroke-width:2px
-    style W3 fill:#00AED9,stroke:#333,stroke-width:2px
+
 ```
 
 ## Key Features
